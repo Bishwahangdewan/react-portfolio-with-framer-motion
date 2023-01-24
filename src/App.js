@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './components/Theme';
+import { Container, MainBody } from './components/styled-components/Global.styled';
+import Navbar from './components/Navbar';
+import Showcase from './components/Showcase';
+import MySkills from './components/MySkills';
+import MyProjects from './components/MyProjects';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <MainBody>
+        <Container>
+            <Navbar />
+            <Showcase />
+            <MySkills />
+            <MyProjects />
+            <Footer />
+        </Container>
+      </MainBody>
+    </ThemeProvider>
   );
 }
 
